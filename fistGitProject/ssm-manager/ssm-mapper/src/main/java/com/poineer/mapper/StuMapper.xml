@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.poineer.mapper.StuMapper" >
+    
+    <insert id="addStu" parameterType="com.poineer.enty.Student">
+        insert into student (sName,sSex) values (#{sName},#{sSex}) 
+    </insert>
+    
+    <delete id="delStuByName" parameterType="String">
+        DELETE from student  WHERE sname=  #{sName}
+    </delete>
+    
+    <select id="findStuById" parameterType="int" resultType="com.poineer.enty.Student">
+        select * from Student t
+        	where t.sId = #{sId}
+    </select>
+    
+     <select id="findAllStus"  resultType="com.poineer.enty.Student">
+        select * from Student t where 1=1
+    </select>
+    
+</mapper>
